@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Strike/Window.h"
+
 #include "Strike/Log.h"
 
 #include <GLFW/glfw3.h>

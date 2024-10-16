@@ -13,8 +13,10 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
 IncludeDir = {}
 IncludeDir["GLFW"] = "Strike/vendor/GLFW/include"
+IncludeDir["Glad"] = "Strike/vendor/Glad/include"
 
 include "Strike/vendor/GLFW"
+include "Strike/vendor/Glad"
 
 project "Strike"
     location "Strike"
@@ -37,12 +39,14 @@ project "Strike"
     {
         "%{prj.name}/src",
         "%{prj.name}/vendor/spdlog/include",
-        "%{IncludeDir.GLFW}"
+        "%{IncludeDir.GLFW}",
+        "%{IncludeDir.Glad}"
     }
 
     links
     {
         "GLFW",
+        "Glad",
         "opengl32.lib",
         "dwmapi.lib"
     }
@@ -55,7 +59,8 @@ project "Strike"
         defines
         {
             "STRK_PLATFORM_WINDOWS",
-            "STRK_BUILD_DLL"
+            "STRK_BUILD_DLL",
+            "GLFW_INCLUDE_NONE"
         }
 
         postbuildcommands
