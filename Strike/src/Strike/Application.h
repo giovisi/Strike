@@ -1,6 +1,10 @@
 #pragma once
 
-#include "Core.h"
+#include "Window.h"
+#include "Strike/Core.h"
+#include "Strike/LayerStack.h"
+#include "Strike/Events/Event.h"
+#include "Strike/Events/ApplicationEvent.h"
 
 namespace Strike {
 
@@ -10,8 +14,20 @@ namespace Strike {
 		virtual ~Application();
 
 		void Run();
+
+		void OnEvent(Event& e);
+
+		void PushLayer(Layer* layer);
+		void PushOverlay(Layer* overlay);
+
+	private:
+		bool OnWindowClose(WindowCloseEvent& e);
+
+		std::unique_ptr<Window> m_Window;
+		bool m_Running = true;
+		LayerStack m_LayerStack;
 	};
 
 	// To be defined in CLIENT
-	Application* CreateApplication();
+	STRIKE_API Application* CreateApplication();
 }

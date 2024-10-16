@@ -1,36 +1,75 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Source Files">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    <Filter Include="Strike">
+      <UniqueIdentifier>{779BEED1-633D-19A8-4CF8-2CFC3839A0F8}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    <Filter Include="Strike\Events">
+      <UniqueIdentifier>{7BDB2114-E79B-9D4A-B0D6-E6C71C56E226}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    <Filter Include="Strike\Platform">
+      <UniqueIdentifier>{ABAD24C0-1739-9284-204A-15798C54EE84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Strike\Platform\Windows">
+      <UniqueIdentifier>{E5D2AE11-510A-F7A8-5A14-5BCCC6CA1DA2}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Strike.h" />
     <ClInclude Include="src\Strike\Application.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Strike.h">
-      <Filter>Header Files</Filter>
+      <Filter>Strike</Filter>
     </ClInclude>
     <ClInclude Include="src\Strike\Core.h">
-      <Filter>Header Files</Filter>
+      <Filter>Strike</Filter>
     </ClInclude>
     <ClInclude Include="src\Strike\EntryPoint.h">
-      <Filter>Header Files</Filter>
+      <Filter>Strike</Filter>
     </ClInclude>
+    <ClInclude Include="src\Strike\Events\ApplicationEvent.h">
+      <Filter>Strike\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Strike\Events\Event.h">
+      <Filter>Strike\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Strike\Events\KeyEvent.h">
+      <Filter>Strike\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Strike\Events\MouseEvent.h">
+      <Filter>Strike\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Strike\Layer.h">
+      <Filter>Strike</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Strike\LayerStack.h">
+      <Filter>Strike</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Strike\Log.h">
+      <Filter>Strike</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Strike\Platform\Windows\WindowsWindow.h">
+      <Filter>Strike\Platform\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Strike\Window.h">
+      <Filter>Strike</Filter>
+    </ClInclude>
+    <ClInclude Include="src\strkpch.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Strike\Application.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Strike</Filter>
     </ClCompile>
+    <ClCompile Include="src\Strike\Layer.cpp">
+      <Filter>Strike</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Strike\LayerStack.cpp">
+      <Filter>Strike</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Strike\Log.cpp">
+      <Filter>Strike</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Strike\Platform\Windows\WindowsWindow.cpp">
+      <Filter>Strike\Platform\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="src\strkpch.cpp" />
   </ItemGroup>
 </Project>

@@ -1,0 +1,6 @@
+[submodule "Strike/vendor/spdlog"]
+	path = Strike/vendor/spdlog
+	url = https://github.com/gabime/spdlog
+[submodule "Strike/vendor/GLFW"]
+	path = Strike/vendor/GLFW
+	url = https://github.com/TheCherno/GLFW
