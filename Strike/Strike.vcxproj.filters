@@ -7,8 +7,14 @@
     <Filter Include="Strike\Events">
       <UniqueIdentifier>{7BDB2114-E79B-9D4A-B0D6-E6C71C56E226}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Strike\ImGui">
+      <UniqueIdentifier>{E18D91CA-CDF0-206F-7676-592562B8ECF1}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Strike\Platform">
       <UniqueIdentifier>{ABAD24C0-1739-9284-204A-15798C54EE84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Strike\Platform\OpenGL">
+      <UniqueIdentifier>{7FE8D5DE-6BE2-FE30-544F-954140E8649D}</UniqueIdentifier>
     </Filter>
     <Filter Include="Strike\Platform\Windows">
       <UniqueIdentifier>{E5D2AE11-510A-F7A8-5A14-5BCCC6CA1DA2}</UniqueIdentifier>
@@ -37,6 +43,9 @@
     <ClInclude Include="src\Strike\Events\MouseEvent.h">
       <Filter>Strike\Events</Filter>
     </ClInclude>
+    <ClInclude Include="src\Strike\ImGui\ImGuiLayer.h">
+      <Filter>Strike\ImGui</Filter>
+    </ClInclude>
     <ClInclude Include="src\Strike\Layer.h">
       <Filter>Strike</Filter>
     </ClInclude>
@@ -45,6 +54,9 @@
     </ClInclude>
     <ClInclude Include="src\Strike\Log.h">
       <Filter>Strike</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Strike\Platform\OpenGL\ImGuiOpenGLRenderer.h">
+      <Filter>Strike\Platform\OpenGL</Filter>
     </ClInclude>
     <ClInclude Include="src\Strike\Platform\Windows\WindowsWindow.h">
       <Filter>Strike\Platform\Windows</Filter>
@@ -58,6 +70,9 @@
     <ClCompile Include="src\Strike\Application.cpp">
       <Filter>Strike</Filter>
     </ClCompile>
+    <ClCompile Include="src\Strike\ImGui\ImGuiLayer.cpp">
+      <Filter>Strike\ImGui</Filter>
+    </ClCompile>
     <ClCompile Include="src\Strike\Layer.cpp">
       <Filter>Strike</Filter>
     </ClCompile>
@@ -66,6 +81,9 @@
     </ClCompile>
     <ClCompile Include="src\Strike\Log.cpp">
       <Filter>Strike</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Strike\Platform\OpenGL\ImGuiOpenGLRenderer.cpp">
+      <Filter>Strike\Platform\OpenGL</Filter>
     </ClCompile>
     <ClCompile Include="src\Strike\Platform\Windows\WindowsWindow.cpp">
       <Filter>Strike\Platform\Windows</Filter>

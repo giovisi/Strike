@@ -18,6 +18,7 @@ class Sandbox : public Strike::Application {
 public:
 	Sandbox() {
 		PushLayer(new ExampleLayer());
+		PushOverlay(new Strike::ImGuiLayer());
 	}
 
 	~Sandbox() {
