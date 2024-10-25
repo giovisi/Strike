@@ -65,6 +65,10 @@
       <Filter>Strike</Filter>
     </ClInclude>
     <ClInclude Include="src\strkpch.h" />
+    <ClInclude Include="src\Strike\Input.h" />
+    <ClInclude Include="src\Strike\Platform\Windows\WindowsInput.h" />
+    <ClInclude Include="src\Strike\KeyCodes.h" />
+    <ClInclude Include="src\Strike\MouseButtonCodes.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Strike\Application.cpp">
@@ -89,5 +93,6 @@
       <Filter>Strike\Platform\Windows</Filter>
     </ClCompile>
     <ClCompile Include="src\strkpch.cpp" />
+    <ClCompile Include="src\Strike\Platform\Windows\WindowsInput.cpp" />
   </ItemGroup>
 </Project>

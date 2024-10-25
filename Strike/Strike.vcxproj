@@ -162,9 +162,11 @@
     <ClInclude Include="src\Strike\Events\MouseEvent.h" />
     <ClInclude Include="src\Strike\ImGui\ImGuiLayer.h" />
     <ClInclude Include="src\Strike\Input.h" />
+    <ClInclude Include="src\Strike\KeyCodes.h" />
     <ClInclude Include="src\Strike\Layer.h" />
     <ClInclude Include="src\Strike\LayerStack.h" />
     <ClInclude Include="src\Strike\Log.h" />
+    <ClInclude Include="src\Strike\MouseButtonCodes.h" />
     <ClInclude Include="src\Strike\Platform\OpenGL\ImGuiOpenGLRenderer.h" />
     <ClInclude Include="src\Strike\Platform\Windows\WindowsInput.h" />
     <ClInclude Include="src\Strike\Platform\Windows\WindowsWindow.h" />

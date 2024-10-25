@@ -53,9 +53,6 @@ namespace Strike {
 				layer->OnUpdate();
 			}
 
-			auto [x, y] = Input::GetMousePosition();
-			STRK_CORE_TRACE("{0}, {1}", x, y);
-
 			m_Window->OnUpdate();
 		}
 	}

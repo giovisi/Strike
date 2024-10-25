@@ -6,11 +6,17 @@ public:
 		: Layer("Example") {}
 
 	void OnUpdate() override {
-		STRK_INFO("ExampleLayer::Update");
+		if (Strike::Input::IsKeyPressed(STRK_KEY_TAB))
+			STRK_TRACE("Tab Key is pressed! (Poll)");
 	}
 	
 	void OnEvent(Strike::Event &event) override {
-		STRK_TRACE("{0}", event);
+		if (event.GetEventType() == Strike::EventType::KeyPressed) {
+			Strike::KeyPressedEvent& e = (Strike::KeyPressedEvent&)event;
+			if (e.GetKeyCode() == STRK_KEY_TAB)
+				STRK_TRACE("Tab key is pressed! (event)");
+			STRK_TRACE("{0}", (char)e.GetKeyCode());
+		}
 	}
 };
 

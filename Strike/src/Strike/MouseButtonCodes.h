@@ -1,0 +1,15 @@
+#pragma once
+
+// From glfw3.h
+#define STRK_MOUSE_BUTTON_1         0
+#define STRK_MOUSE_BUTTON_2         1
+#define STRK_MOUSE_BUTTON_3         2
+#define STRK_MOUSE_BUTTON_4         3
+#define STRK_MOUSE_BUTTON_5         4
+#define STRK_MOUSE_BUTTON_6         5
+#define STRK_MOUSE_BUTTON_7         6
+#define STRK_MOUSE_BUTTON_8         7
+#define STRK_MOUSE_BUTTON_LAST      STRK_MOUSE_BUTTON_8
+#define STRK_MOUSE_BUTTON_LEFT      STRK_MOUSE_BUTTON_1
+#define STRK_MOUSE_BUTTON_RIGHT     STRK_MOUSE_BUTTON_2
+#define STRK_MOUSE_BUTTON_MIDDLE    STRK_MOUSE_BUTTON_3
