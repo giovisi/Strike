@@ -7,7 +7,7 @@
 #include "Strike/Events/ApplicationEvent.h"
 
 namespace Strike {
-	class STRIKE_API ImGuiLayer : public Layer {
+	class ImGuiLayer : public Layer {
 	public:
 		ImGuiLayer();
 		~ImGuiLayer();

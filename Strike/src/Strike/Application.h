@@ -10,7 +10,7 @@
 
 namespace Strike {
 
-	class STRIKE_API Application {
+	class  Application {
 	public:
 		Application();
 		virtual ~Application();
@@ -38,5 +38,5 @@ namespace Strike {
 	};
 
 	// To be defined in CLIENT
-	STRIKE_API Application* CreateApplication();
+	 Application* CreateApplication();
 }

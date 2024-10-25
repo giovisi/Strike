@@ -4,7 +4,7 @@
 #include "Strike/Events/Event.h"
 
 namespace Strike {
-	class STRIKE_API Layer {
+	class  Layer {
 	public:
 		Layer(const std::string& name = "Layer");
 		virtual ~Layer();

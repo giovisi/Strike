@@ -17,7 +17,7 @@ namespace Strike {
 			:	Title(title), Width(width), Height(height) {}
 	};
 
-	class STRIKE_API Window {
+	class  Window {
 	public:
 		using EventCallbackFn = std::function<void(Event&)>;
 

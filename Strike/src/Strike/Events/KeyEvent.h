@@ -4,7 +4,7 @@
 
 namespace Strike {
 
-	class STRIKE_API KeyEvent : public Event {
+	class KeyEvent : public Event {
 	public:
 		inline int GetKeyCode() const { return m_KeyCode; }
 
@@ -17,7 +17,7 @@ namespace Strike {
 		int m_KeyCode;
 	};
 
-	class STRIKE_API KeyPressedEvent : public KeyEvent {
+	class KeyPressedEvent : public KeyEvent {
 	public:
 		KeyPressedEvent(int keycode, int repeatCount)
 			: KeyEvent(keycode), m_RepeatCount(repeatCount) {}
@@ -36,7 +36,7 @@ namespace Strike {
 		int m_RepeatCount;
 	};
 
-	class STRIKE_API KeyReleasedEvent : public KeyEvent {
+	class KeyReleasedEvent : public KeyEvent {
 	public:
 		KeyReleasedEvent(int keycode)
 			: KeyEvent(keycode) {}
@@ -50,7 +50,7 @@ namespace Strike {
 		EVENT_CLASS_TYPE(KeyReleased)
 	};
 
-	class STRIKE_API KeyTypedEvent : public KeyEvent {
+	class KeyTypedEvent : public KeyEvent {
 	public:
 		KeyTypedEvent(int keycode)
 			: KeyEvent(keycode) {}
