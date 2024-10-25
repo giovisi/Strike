@@ -115,6 +115,7 @@ project "Sandbox"
     {
         "Strike/vendor/spdlog/include",
         "Strike/src",
+        "Strike/vendor",
         "%{IncludeDir.GLFW}",
         "%{IncludeDir.glm}"
     }

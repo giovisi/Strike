@@ -6,6 +6,8 @@
 #include "Strike/Events/Event.h"
 #include "Strike/Events/ApplicationEvent.h"
 
+#include "Strike/ImGui/ImGuiLayer.h" 
+
 namespace Strike {
 
 	class STRIKE_API Application {
@@ -27,6 +29,7 @@ namespace Strike {
 		bool OnWindowClose(WindowCloseEvent& e);
 
 		std::unique_ptr<Window> m_Window;
+		ImGuiLayer* m_ImGuiLayer;
 		bool m_Running = true;
 		LayerStack m_LayerStack;
 

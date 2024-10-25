@@ -1,5 +1,7 @@
 #include <Strike.h>
 
+#include "imgui/imgui.h"
+
 class ExampleLayer : public Strike::Layer {
 public:
 	ExampleLayer()
@@ -8,6 +10,12 @@ public:
 	void OnUpdate() override {
 		if (Strike::Input::IsKeyPressed(STRK_KEY_TAB))
 			STRK_TRACE("Tab Key is pressed! (Poll)");
+	}
+
+	virtual void OnImGuiRender() override {
+		ImGui::Begin("Test");
+		ImGui::Text("Test");
+		ImGui::End();
 	}
 	
 	void OnEvent(Strike::Event &event) override {
@@ -24,7 +32,6 @@ class Sandbox : public Strike::Application {
 public:
 	Sandbox() {
 		PushLayer(new ExampleLayer());
-		PushOverlay(new Strike::ImGuiLayer());
 	}
 
 	~Sandbox() {
