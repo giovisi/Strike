@@ -15,10 +15,12 @@ IncludeDir = {}
 IncludeDir["GLFW"] = "Strike/vendor/GLFW/include"
 IncludeDir["Glad"] = "Strike/vendor/Glad/include"
 IncludeDir["ImGui"] = "Strike/vendor/imgui"
+IncludeDir["glm"] = "Strike/vendor/glm"
 
 include "Strike/vendor/GLFW"
 include "Strike/vendor/Glad"
 include "Strike/vendor/imgui"
+--include "Strike/vendor/glm"
 
 project "Strike"
     location "Strike"
@@ -34,7 +36,9 @@ project "Strike"
     files
     {
         "%{prj.name}/src/**.h",
-        "%{prj.name}/src/**.cpp"
+        "%{prj.name}/src/**.cpp",
+        "%{prj.name}/vendor/glm/glm/**.hpp",
+        "%{prj.name}/vendor/glm/glm/**.inl"
     }
 
     includedirs
@@ -43,7 +47,8 @@ project "Strike"
         "%{prj.name}/vendor/spdlog/include",
         "%{IncludeDir.GLFW}",
         "%{IncludeDir.Glad}",
-        "%{IncludeDir.ImGui}"
+        "%{IncludeDir.ImGui}",
+        "%{IncludeDir.glm}"
     }
 
     links
@@ -110,7 +115,8 @@ project "Sandbox"
     {
         "Strike/vendor/spdlog/include",
         "Strike/src",
-        "%{IncludeDir.GLFW}"
+        "%{IncludeDir.GLFW}",
+        "%{IncludeDir.glm}"
     }
 
     links
