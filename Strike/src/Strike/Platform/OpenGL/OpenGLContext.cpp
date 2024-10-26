@@ -14,6 +14,11 @@ namespace Strike{
 		glfwMakeContextCurrent(m_WindowHandle);
 		int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
 		STRK_CORE_ASSERT(status, "Failed to initialize Glad!");
+
+		STRK_CORE_INFO("OpenGL Info");
+		STRK_CORE_INFO("  Vendor: {0}", (const char*) glGetString(GL_VENDOR));
+		STRK_CORE_INFO("  Renderer: {0}", (const char*) glGetString(GL_RENDERER));
+		STRK_CORE_INFO("  Version: {0}", (const char*) glGetString(GL_VERSION));
 	}
 
 	void OpenGLContext::SwapBuffers() {
