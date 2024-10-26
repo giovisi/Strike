@@ -1,8 +1,7 @@
 #pragma once
 
 #include "Strike/Window.h"
-
-#include "Strike/Log.h"
+#include "Strike/Renderer/GraphicsContext.h"
 
 #include <GLFW/glfw3.h>
 
@@ -31,6 +30,7 @@ namespace Strike {
 
 	private:
 		GLFWwindow* m_Window;
+		GraphicsContext* m_Context;
 
 		struct WindowData {
 			std::string Title;

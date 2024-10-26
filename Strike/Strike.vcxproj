@@ -158,8 +158,10 @@
     <ClInclude Include="src\Strike\LayerStack.h" />
     <ClInclude Include="src\Strike\Log.h" />
     <ClInclude Include="src\Strike\MouseButtonCodes.h" />
+    <ClInclude Include="src\Strike\Platform\OpenGL\OpenGLContext.h" />
     <ClInclude Include="src\Strike\Platform\Windows\WindowsInput.h" />
     <ClInclude Include="src\Strike\Platform\Windows\WindowsWindow.h" />
+    <ClInclude Include="src\Strike\Renderer\GraphicsContext.h" />
     <ClInclude Include="src\Strike\Window.h" />
     <ClInclude Include="src\strkpch.h" />
     <ClInclude Include="vendor\glm\glm\common.hpp" />
@@ -586,6 +588,7 @@
     <ClCompile Include="src\Strike\Layer.cpp" />
     <ClCompile Include="src\Strike\LayerStack.cpp" />
     <ClCompile Include="src\Strike\Log.cpp" />
+    <ClCompile Include="src\Strike\Platform\OpenGL\OpenGLContext.cpp" />
     <ClCompile Include="src\Strike\Platform\Windows\WindowsInput.cpp" />
     <ClCompile Include="src\Strike\Platform\Windows\WindowsWindow.cpp" />
     <ClCompile Include="src\strkpch.cpp">
