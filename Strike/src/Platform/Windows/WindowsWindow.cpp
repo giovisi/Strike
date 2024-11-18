@@ -5,7 +5,7 @@
 #include "Strike/Events/KeyEvent.h"
 #include "Strike/Events/MouseEvent.h"
 
-#include "Strike/Platform/OpenGL/OpenGLContext.h"
+#include "Platform/OpenGL/OpenGLContext.h"
 
 namespace Strike {
 	static bool s_GLFWInitialized = false;

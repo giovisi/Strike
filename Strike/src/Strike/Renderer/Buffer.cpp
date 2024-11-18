@@ -3,13 +3,13 @@
 
 #include "Renderer.h"
 
-#include "Strike/Platform/OpenGL/OpenGLBuffer.h"
+#include "Platform/OpenGL/OpenGLBuffer.h"
 
 namespace Strike {
 	VertexBuffer* VertexBuffer::Create(float* vertices, uint32_t size) {
 		switch (Renderer::GetAPI()) {
-		case RendererAPI::None:		STRK_CORE_ASSERT(false, "RendererAPI::None currently not supprorted!"); return nullptr;
-		case RendererAPI::OpenGL:	return new OpenGLVertexBuffer(vertices, size);
+		case RendererAPI::API::None:		STRK_CORE_ASSERT(false, "RendererAPI::API::None currently not supprorted!"); return nullptr;
+		case RendererAPI::API::OpenGL:	return new OpenGLVertexBuffer(vertices, size);
 		}
 
 		STRK_CORE_ASSERT(false, "Unknown RendererAPI!");
@@ -18,8 +18,8 @@ namespace Strike {
 
 	IndexBuffer* IndexBuffer::Create(uint32_t* indices, uint32_t count) {
 		switch (Renderer::GetAPI()) {
-		case RendererAPI::None:		STRK_CORE_ASSERT(false, "RendererAPI::None currently not supprorted!"); return nullptr;
-		case RendererAPI::OpenGL:	return new OpenGLIndexBuffer(indices, count);
+		case RendererAPI::API::None:		STRK_CORE_ASSERT(false, "RendererAPI::API::None currently not supprorted!"); return nullptr;
+		case RendererAPI::API::OpenGL:	return new OpenGLIndexBuffer(indices, count);
 		}
 
 		STRK_CORE_ASSERT(false, "Unknown RendererAPI!");
