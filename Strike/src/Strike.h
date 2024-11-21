@@ -12,6 +12,18 @@
 
 #include "Strike/ImGui/ImGuiLayer.h"
 
+// -------Renderer-------
+
+#include "Strike/Renderer/Renderer.h"
+#include "Strike/Renderer/RenderCommand.h"
+
+#include "Strike/Renderer/Buffer.h"
+#include "Strike/Renderer/Shader.h"
+#include "Strike/Renderer/VertexArray.h"
+
+#include "Strike/Renderer/OrthographicCamera.h"
+// ----------------------
+
 // -----Entry Point------
 #include "Strike/EntryPoint.h"
 // ----------------------
