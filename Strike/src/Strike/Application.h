@@ -12,6 +12,8 @@
 #include "Strike/Renderer/Buffer.h"
 #include "Strike/Renderer/VertexArray.h"
 
+#include "Strike/Renderer/OrthographicCamera.h"
+
 namespace Strike {
 
 	class  Application {
@@ -43,6 +45,7 @@ namespace Strike {
 		std::shared_ptr<Shader> m_BlueShader;
 		std::shared_ptr<VertexArray> m_SquareVA;
 
+		OrthographicCamera m_Camera;
 
 	private:
 		static Application* s_Instance;
