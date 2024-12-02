@@ -6,6 +6,8 @@
 #include "Strike/Layer.h"
 #include "Strike/Log.h"
 
+#include "Strike/Core/Timestep.h"
+
 #include "Strike/Input.h"
 #include "Strike/KeyCodes.h"
 #include "Strike/MouseButtonCodes.h"

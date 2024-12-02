@@ -147,6 +147,7 @@
     <ClInclude Include="src\Strike.h" />
     <ClInclude Include="src\Strike\Application.h" />
     <ClInclude Include="src\Strike\Core.h" />
+    <ClInclude Include="src\Strike\Core\Timestep.h" />
     <ClInclude Include="src\Strike\EntryPoint.h" />
     <ClInclude Include="src\Strike\Events\ApplicationEvent.h" />
     <ClInclude Include="src\Strike\Events\Event.h" />

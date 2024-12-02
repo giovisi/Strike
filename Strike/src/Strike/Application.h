@@ -6,13 +6,9 @@
 #include "Strike/Events/Event.h"
 #include "Strike/Events/ApplicationEvent.h"
 
+#include "Strike/Core/Timestep.h"
+
 #include "Strike/ImGui/ImGuiLayer.h" 
-
-#include "Strike/Renderer/Shader.h"
-#include "Strike/Renderer/Buffer.h"
-#include "Strike/Renderer/VertexArray.h"
-
-#include "Strike/Renderer/OrthographicCamera.h"
 
 namespace Strike {
 
@@ -34,11 +30,13 @@ namespace Strike {
 	private:
 		bool OnWindowClose(WindowCloseEvent& e);
 
+	private:
 		std::unique_ptr<Window> m_Window;
 		ImGuiLayer* m_ImGuiLayer;
 		bool m_Running = true;
 		LayerStack m_LayerStack;
-
+		Timestep m_Timestep;
+		float m_LastFrameTime = 0.0f;
 
 	private:
 		static Application* s_Instance;

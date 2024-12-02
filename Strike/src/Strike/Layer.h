@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Strike/Core.h"
+#include "Strike/Core/Timestep.h"
 #include "Strike/Events/Event.h"
 
 namespace Strike {
@@ -11,7 +12,7 @@ namespace Strike {
 
 		virtual void OnAttach() {}
 		virtual void OnDetach() {}
-		virtual void OnUpdate() {}
+		virtual void OnUpdate(Timestep ts) {}
 		virtual void OnImGuiRender() {}
 		virtual void OnEvent(Event& event) {}
 
