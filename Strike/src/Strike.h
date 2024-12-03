@@ -2,16 +2,16 @@
 
 // For use of Strike applications only
 
-#include "Strike/Application.h"
-#include "Strike/Layer.h"
-#include "Strike/Log.h"
+#include "Strike/Core/Application.h"
+#include "Strike/Core/Layer.h"
+#include "Strike/Core/Log.h"
 
 #include "Strike/Core/Timestep.h"
 
-#include "Strike/Input.h"
-#include "Strike/KeyCodes.h"
-#include "Strike/MouseButtonCodes.h"
-#include "Strike/OrthographicCameraController.h"
+#include "Strike/Core/Input.h"
+#include "Strike/Core/KeyCodes.h"
+#include "Strike/Core/MouseButtonCodes.h"
+#include "Strike/Renderer/OrthographicCameraController.h"
 
 
 #include "Strike/ImGui/ImGuiLayer.h"
@@ -30,5 +30,5 @@
 // ----------------------
 
 // -----Entry Point------
-#include "Strike/EntryPoint.h"
+#include "Strike/Core/EntryPoint.h"
 // ----------------------

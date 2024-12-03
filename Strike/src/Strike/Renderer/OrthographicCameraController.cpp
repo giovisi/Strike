@@ -1,8 +1,8 @@
 #include "strkpch.h"
 #include "OrthographicCameraController.h"
 
-#include "Strike/Input.h"
-#include "Strike/KeyCodes.h"
+#include "Strike/Core/Input.h"
+#include "Strike/Core/KeyCodes.h"
 
 namespace Strike {
 	OrthographicCameraController::OrthographicCameraController(float aspectRatio, bool rotation)

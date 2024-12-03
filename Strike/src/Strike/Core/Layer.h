@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Strike/Core.h"
+#include "Strike/Core/Core.h"
 #include "Strike/Core/Timestep.h"
 #include "Strike/Events/Event.h"
 

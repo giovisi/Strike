@@ -13,7 +13,7 @@
 class ExampleLayer : public Strike::Layer {
 public:
 	ExampleLayer()
-		: Layer("Example"), m_CameraController(1280.0f / 720.0f) {
+		: Layer("Example"), m_CameraController(1280.0f / 720.0f, true) {
 		m_VertexArray.reset(Strike::VertexArray::Create());
 
 		float vertices[3 * 7] = {

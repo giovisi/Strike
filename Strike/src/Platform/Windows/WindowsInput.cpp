@@ -1,7 +1,7 @@
 #include "strkpch.h"
 #include "WindowsInput.h"
 
-#include "Strike/Application.h"
+#include "Strike/Core/Application.h"
 #include <GLFW/glfw3.h>
 
 namespace Strike {

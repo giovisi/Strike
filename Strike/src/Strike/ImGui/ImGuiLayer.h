@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Strike/Layer.h"
+#include "Strike/Core/Layer.h"
 
 #include "Strike/Events/KeyEvent.h"
 #include "Strike/Events/MouseEvent.h"

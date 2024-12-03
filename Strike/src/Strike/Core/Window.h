@@ -2,7 +2,7 @@
 
 #include "strkpch.h"
 
-#include "Strike/Core.h"
+#include "Strike/Core/Core.h"
 #include "Strike/Events/Event.h"
 
 namespace Strike {

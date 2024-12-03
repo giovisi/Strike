@@ -2,7 +2,7 @@
 
 #include <string>
 
-#include "Strike/Core.h"
+#include "Strike/Core/Core.h"
 
 namespace Strike {
 	class Texture {

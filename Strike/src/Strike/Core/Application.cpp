@@ -1,11 +1,11 @@
 #include "strkpch.h"
 #include "Application.h"
 
-#include "Strike/Log.h"
+#include "Strike/Core/Log.h"
 
 #include "Strike/Renderer/Renderer.h"
 
-#include "Strike/Input.h"
+#include "Strike/Core/Input.h"
 
 #include <GLFW/glfw3.h>
 

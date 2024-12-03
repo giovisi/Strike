@@ -13,8 +13,8 @@
 #include <unordered_map>
 #include <unordered_set>
 
+#include <Strike/Core/Log.h>
+
 #ifdef STRK_PLATFORM_WINDOWS
 	#include <Windows.h>
 #endif
-
-#include <Strike/Log.h>

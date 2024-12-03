@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Strike/Window.h"
+#include "Strike/Core/Window.h"
 #include "Strike/Renderer/GraphicsContext.h"
 
 #include <GLFW/glfw3.h>

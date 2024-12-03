@@ -1,8 +1,8 @@
 #pragma once
 
 #include "Window.h"
-#include "Strike/Core.h"
-#include "Strike/LayerStack.h"
+#include "Strike/Core/Core.h"
+#include "Strike/Core/LayerStack.h"
 #include "Strike/Events/Event.h"
 #include "Strike/Events/ApplicationEvent.h"
 

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Strike/Input.h"
+#include "Strike/Core/Input.h"
 
 namespace Strike {
 	class WindowsInput : public Input {
