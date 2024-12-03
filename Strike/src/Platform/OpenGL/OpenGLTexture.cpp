@@ -26,6 +26,7 @@ namespace Strike {
 		//glTextureSubImage2D(m_RendererID, 0, 0, 0, m_Width, m_Height, GL_RGB, GL_UNSIGNED_BYTE, data);
 
 
+
 		// OpenGL series version (working)
 
 		glGenTextures(1, &m_RendererID);
@@ -39,6 +40,8 @@ namespace Strike {
 		
 		glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA8, m_Width, m_Height, 0, GL_RGBA, GL_UNSIGNED_BYTE, data);
 		glBindTexture(GL_TEXTURE_2D, 0);
+		
+		
 		
 		stbi_image_free(data);
 	}
