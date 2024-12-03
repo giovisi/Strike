@@ -133,6 +133,7 @@ public:
 		auto textureShader = m_ShaderLibrary.Load("assets/shaders/Texture.glsl");
 
 		m_Texture = Strike::Texture2D::Create("assets/textures/Checkerboard.png");
+		m_StrikeLogoTexture = Strike::Texture2D::Create("assets/textures/StrikeLogo.png");
 
 		std::dynamic_pointer_cast<Strike::OpenGLShader>(textureShader)->Bind();
 		std::dynamic_pointer_cast<Strike::OpenGLShader>(textureShader)->UploadUniformInt("u_Texture", 0);
@@ -181,6 +182,8 @@ public:
 		auto textureShader = m_ShaderLibrary.Get("Texture");
 		m_Texture->Bind();
 		Strike::Renderer::Submit(textureShader, m_SquareVA, glm::scale(glm::mat4(1.0f), glm::vec3(1.5f)));
+		m_StrikeLogoTexture->Bind();
+		Strike::Renderer::Submit(textureShader, m_SquareVA, glm::scale(glm::mat4(1.0f), glm::vec3(1.5f)));
 
 		// Triangle
 		//Strike::Renderer::Submit(m_Shader, m_VertexArray);
@@ -206,7 +209,7 @@ private:
 	Strike::Ref<Strike::Shader> m_FlatColorShader;
 	Strike::Ref<Strike::VertexArray> m_SquareVA;
 
-	Strike::Ref<Strike::Texture2D> m_Texture;
+	Strike::Ref<Strike::Texture2D> m_Texture, m_StrikeLogoTexture;
 
 	Strike::OrthographicCamera m_Camera;
 	glm::vec3 m_CameraPosition;
