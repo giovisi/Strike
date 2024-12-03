@@ -20,7 +20,7 @@ public:
 			 0.0f,  0.5f,  0.0f, 1.0f, 1.0f, 0.0f, 1.0f,
 		};
 
-		std::shared_ptr<Strike::VertexBuffer> vertexBuffer;
+		Strike::Ref<Strike::VertexBuffer> vertexBuffer;
 		vertexBuffer.reset(Strike::VertexBuffer::Create(vertices, sizeof(vertices)));
 		Strike::BufferLayout layout = {
 			{Strike::ShaderDataType::Float3, "a_Position"},
@@ -31,7 +31,7 @@ public:
 		m_VertexArray->AddVertexBuffer(vertexBuffer);
 
 		uint32_t indices[3] = { 0, 1, 2 };
-		std::shared_ptr<Strike::IndexBuffer> indexBuffer;
+		Strike::Ref<Strike::IndexBuffer> indexBuffer;
 		indexBuffer.reset(Strike::IndexBuffer::Create(indices, sizeof(indices) / sizeof(uint32_t)));
 		m_VertexArray->SetIndexBuffer(indexBuffer);
 
@@ -44,7 +44,7 @@ public:
 			 0.5f,  0.5f,  0.0f,
 			-0.5f,  0.5f,  0.0f
 		};
-		std::shared_ptr<Strike::VertexBuffer> squareVB;
+		Strike::Ref<Strike::VertexBuffer> squareVB;
 		squareVB.reset(Strike::VertexBuffer::Create(squareVertices, sizeof(squareVertices)));
 
 		squareVB->SetLayout({
@@ -53,7 +53,7 @@ public:
 		m_SquareVA->AddVertexBuffer(squareVB);
 
 		uint32_t squareIndices[6] = { 0, 1, 2, 2, 3, 0 };
-		std::shared_ptr<Strike::IndexBuffer> squareIB;
+		Strike::Ref<Strike::IndexBuffer> squareIB;
 		squareIB.reset(Strike::IndexBuffer::Create(squareIndices, sizeof(squareIndices) / sizeof(uint32_t)));
 		m_SquareVA->SetIndexBuffer(squareIB);
 
@@ -183,11 +183,11 @@ public:
 	}
 
 private:
-	std::shared_ptr<Strike::Shader> m_Shader;
-	std::shared_ptr<Strike::VertexArray> m_VertexArray;
+	Strike::Ref<Strike::Shader> m_Shader;
+	Strike::Ref<Strike::VertexArray> m_VertexArray;
 
-	std::shared_ptr<Strike::Shader> m_FlatColorShader;
-	std::shared_ptr<Strike::VertexArray> m_SquareVA;
+	Strike::Ref<Strike::Shader> m_FlatColorShader;
+	Strike::Ref<Strike::VertexArray> m_SquareVA;
 
 	Strike::OrthographicCamera m_Camera;
 	glm::vec3 m_CameraPosition;
