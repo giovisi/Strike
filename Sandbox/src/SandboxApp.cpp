@@ -7,6 +7,8 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 
+#
+
 
 class ExampleLayer : public Strike::Layer {
 public:
@@ -93,7 +95,7 @@ public:
 			}
 		)";
 
-		m_Shader.reset(Strike::Shader::Create(vertexSrc, fragmentSrc));
+		m_Shader = Strike::Shader::Create("VertexPosColor", vertexSrc, fragmentSrc);
 
 		std::string flatColorShaderVertexSrc = R"(
 			#version 330 core
@@ -126,14 +128,14 @@ public:
 			}
 		)";
 
-		m_FlatColorShader.reset(Strike::Shader::Create(flatColorShaderVertexSrc, flatColorShaderFragmentSrc));
+		m_FlatColorShader = Strike::Shader::Create("FlatColor", flatColorShaderVertexSrc, flatColorShaderFragmentSrc);
 
-		m_TextureShader.reset(Strike::Shader::Create("assets/shaders/Texture.glsl"));
+		auto textureShader = m_ShaderLibrary.Load("assets/shaders/Texture.glsl");
 
 		m_Texture = Strike::Texture2D::Create("assets/textures/Checkerboard.png");
 
-		std::dynamic_pointer_cast<Strike::OpenGLShader>(m_TextureShader)->Bind();
-		std::dynamic_pointer_cast<Strike::OpenGLShader>(m_TextureShader)->UploadUniformInt("u_Texture", 0);
+		std::dynamic_pointer_cast<Strike::OpenGLShader>(textureShader)->Bind();
+		std::dynamic_pointer_cast<Strike::OpenGLShader>(textureShader)->UploadUniformInt("u_Texture", 0);
 	}
 
 	void OnUpdate(Strike::Timestep ts) override {
@@ -176,8 +178,9 @@ public:
 			}
 		}
 
+		auto textureShader = m_ShaderLibrary.Get("Texture");
 		m_Texture->Bind();
-		Strike::Renderer::Submit(m_TextureShader, m_SquareVA, glm::scale(glm::mat4(1.0f), glm::vec3(1.5f)));
+		Strike::Renderer::Submit(textureShader, m_SquareVA, glm::scale(glm::mat4(1.0f), glm::vec3(1.5f)));
 
 		// Triangle
 		//Strike::Renderer::Submit(m_Shader, m_VertexArray);
@@ -196,10 +199,11 @@ public:
 	}
 
 private:
+	Strike::ShaderLibrary m_ShaderLibrary;
 	Strike::Ref<Strike::Shader> m_Shader;
 	Strike::Ref<Strike::VertexArray> m_VertexArray;
 
-	Strike::Ref<Strike::Shader> m_FlatColorShader, m_TextureShader;
+	Strike::Ref<Strike::Shader> m_FlatColorShader;
 	Strike::Ref<Strike::VertexArray> m_SquareVA;
 
 	Strike::Ref<Strike::Texture2D> m_Texture;
