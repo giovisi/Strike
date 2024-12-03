@@ -11,6 +11,8 @@
 #include "Strike/Input.h"
 #include "Strike/KeyCodes.h"
 #include "Strike/MouseButtonCodes.h"
+#include "Strike/OrthographicCameraController.h"
+
 
 #include "Strike/ImGui/ImGuiLayer.h"
 

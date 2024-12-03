@@ -13,7 +13,7 @@
 class ExampleLayer : public Strike::Layer {
 public:
 	ExampleLayer()
-		: Layer("Example"), m_Camera(-1.6f, 1.6f, -0.9f, 0.9f), m_CameraPosition(0.0f) {
+		: Layer("Example"), m_CameraController(1280.0f / 720.0f) {
 		m_VertexArray.reset(Strike::VertexArray::Create());
 
 		float vertices[3 * 7] = {
@@ -61,6 +61,25 @@ public:
 		squareIB.reset(Strike::IndexBuffer::Create(squareIndices, sizeof(squareIndices) / sizeof(uint32_t)));
 		m_SquareVA->SetIndexBuffer(squareIB);
 
+		//-------- To adjust logo dimensions --------
+		m_SquareLogo.reset(Strike::VertexArray::Create());
+
+		float squareVerticesLogo[5 * 4] = {
+			-0.5f, -0.36f,  0.0f, 0.0f, 0.0f,
+			 0.5f, -0.36f,  0.0f, 1.0f, 0.0f,
+			 0.5f,  0.36f,  0.0f, 1.0f, 1.0f,
+			-0.5f,  0.36f,  0.0f, 0.0f, 1.0f
+		};
+
+		squareVB.reset(Strike::VertexBuffer::Create(squareVerticesLogo, sizeof(squareVerticesLogo)));
+
+		squareVB->SetLayout({
+			{ Strike::ShaderDataType::Float3, "a_Position" },
+			{ Strike::ShaderDataType::Float2, "a_TexCoord" }
+		});
+		m_SquareLogo->AddVertexBuffer(squareVB);
+		m_SquareLogo->SetIndexBuffer(squareIB);
+		//-------------------------------------------
 
 		std::string vertexSrc = R"(
 			#version 330 core
@@ -140,31 +159,14 @@ public:
 	}
 
 	void OnUpdate(Strike::Timestep ts) override {
-		//STRK_TRACE("Delta time : {0}s ({1}ms)", ts.GetSeconds(), ts.GetMilliseconds());
+		// Update
+		m_CameraController.OnUpdate(ts);
 
-		if (Strike::Input::IsKeyPressed(STRK_KEY_LEFT))
-			m_CameraPosition.x -= m_CameraMoveSpeed * ts;
-		else if (Strike::Input::IsKeyPressed(STRK_KEY_RIGHT))
-			m_CameraPosition.x += m_CameraMoveSpeed * ts;
-
-		if (Strike::Input::IsKeyPressed(STRK_KEY_DOWN))
-			m_CameraPosition.y -= m_CameraMoveSpeed * ts;
-		else if (Strike::Input::IsKeyPressed(STRK_KEY_UP))
-			m_CameraPosition.y += m_CameraMoveSpeed * ts;
-
-		if (Strike::Input::IsKeyPressed(STRK_KEY_A))
-			m_CameraRotation += m_CameraRotationSpeed * ts;
-		else if (Strike::Input::IsKeyPressed(STRK_KEY_D))
-			m_CameraRotation -= m_CameraRotationSpeed * ts;
-
-
+		// Render
 		Strike::RenderCommand::SetClearColor({ 0.1f, 0.1f, 0.1f, 1 });
 		Strike::RenderCommand::Clear();
 
-		m_Camera.SetPosition(m_CameraPosition);
-		m_Camera.SetRotation(m_CameraRotation);
-
-		Strike::Renderer::BeginScene(m_Camera);
+		Strike::Renderer::BeginScene(m_CameraController.GetCamera());
 
 		glm::mat4 scale = glm::scale(glm::mat4(1.0f), glm::vec3(0.1f));
 
@@ -182,8 +184,9 @@ public:
 		auto textureShader = m_ShaderLibrary.Get("Texture");
 		m_Texture->Bind();
 		Strike::Renderer::Submit(textureShader, m_SquareVA, glm::scale(glm::mat4(1.0f), glm::vec3(1.5f)));
-		m_StrikeLogoTexture->Bind();
-		Strike::Renderer::Submit(textureShader, m_SquareVA, glm::scale(glm::mat4(1.0f), glm::vec3(1.5f)));
+		m_StrikeLogoTexture->Bind(); 
+		// m_SquareLogo to adjust logo dimensions (should be m_SquareVA)
+		Strike::Renderer::Submit(textureShader, m_SquareLogo, glm::scale(glm::mat4(1.0f), glm::vec3(1.5f)));
 
 		// Triangle
 		//Strike::Renderer::Submit(m_Shader, m_VertexArray);
@@ -197,8 +200,8 @@ public:
 		ImGui::End();
 	}
 	
-	void OnEvent(Strike::Event &event) override {
-
+	void OnEvent(Strike::Event& e) override {
+		m_CameraController.OnEvent(e);
 	}
 
 private:
@@ -207,17 +210,11 @@ private:
 	Strike::Ref<Strike::VertexArray> m_VertexArray;
 
 	Strike::Ref<Strike::Shader> m_FlatColorShader;
-	Strike::Ref<Strike::VertexArray> m_SquareVA;
+	Strike::Ref<Strike::VertexArray> m_SquareVA, m_SquareLogo; // Logo to adjust dimensions (could be replaced by SquareVA)
 
 	Strike::Ref<Strike::Texture2D> m_Texture, m_StrikeLogoTexture;
 
-	Strike::OrthographicCamera m_Camera;
-	glm::vec3 m_CameraPosition;
-	float m_CameraMoveSpeed = 5.0f;
-
-	float m_CameraRotation = 0.0f;
-	float m_CameraRotationSpeed = 180.0f;
-
+	Strike::OrthographicCameraController m_CameraController;
 	glm::vec3 m_SquareColor = { 0.2f, 0.3f, 0.8f };
 };
 
