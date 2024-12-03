@@ -144,6 +144,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="src\Platform\OpenGL\OpenGLRendererAPI.h" />
+    <ClInclude Include="src\Platform\OpenGL\OpenGLShader.h" />
     <ClInclude Include="src\Strike.h" />
     <ClInclude Include="src\Strike\Application.h" />
     <ClInclude Include="src\Strike\Core.h" />
@@ -594,6 +595,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Platform\OpenGL\OpenGLRendererAPI.cpp" />
+    <ClCompile Include="src\Platform\OpenGL\OpenGLShader.cpp" />
     <ClCompile Include="src\Strike\Application.cpp" />
     <ClCompile Include="src\Strike\ImGui\ImGuiBuild.cpp" />
     <ClCompile Include="src\Strike\ImGui\ImGuiLayer.cpp" />
