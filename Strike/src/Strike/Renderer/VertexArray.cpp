@@ -5,10 +5,10 @@
 #include "Platform/OpenGL/OpenGLVertexArray.h"
 
 namespace Strike {
-	VertexArray* VertexArray::Create() {
+	Ref<VertexArray> VertexArray::Create() {
 		switch (Renderer::GetAPI()) {
 		case RendererAPI::API::None:	STRK_CORE_ASSERT(false, "RendererAPI::API::None currently not supprorted!"); return nullptr;
-		case RendererAPI::API::OpenGL:	return new OpenGLVertexArray();
+		case RendererAPI::API::OpenGL:	return std::make_shared<OpenGLVertexArray>();
 		}
 
 

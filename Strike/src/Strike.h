@@ -28,7 +28,3 @@
 
 #include "Strike/Renderer/OrthographicCamera.h"
 // ----------------------
-
-// -----Entry Point------
-#include "Strike/Core/EntryPoint.h"
-// ----------------------
