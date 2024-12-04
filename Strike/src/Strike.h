@@ -19,6 +19,7 @@
 // -------Renderer-------
 
 #include "Strike/Renderer/Renderer.h"
+#include "Strike/Renderer/Renderer2D.h"
 #include "Strike/Renderer/RenderCommand.h"
 
 #include "Strike/Renderer/Buffer.h"
