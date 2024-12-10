@@ -14,6 +14,7 @@
 #include <unordered_set>
 
 #include <Strike/Core/Log.h>
+#include <Strike/Debug/Instrumentor.h>
 
 #ifdef STRK_PLATFORM_WINDOWS
 	#include <Windows.h>
