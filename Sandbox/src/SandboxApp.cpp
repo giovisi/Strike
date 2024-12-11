@@ -23,8 +23,7 @@ public:
 			 0.0f,  0.5f,  0.0f, 1.0f, 1.0f, 0.0f, 1.0f,
 		};
 
-		Strike::Ref<Strike::VertexBuffer> vertexBuffer;
-		vertexBuffer.reset(Strike::VertexBuffer::Create(vertices, sizeof(vertices)));
+		Strike::Ref<Strike::VertexBuffer> vertexBuffer = Strike::VertexBuffer::Create(vertices, sizeof(vertices));
 		Strike::BufferLayout layout = {
 			{Strike::ShaderDataType::Float3, "a_Position"},
 			{Strike::ShaderDataType::Float4, "a_Color"}
@@ -34,8 +33,7 @@ public:
 		m_VertexArray->AddVertexBuffer(vertexBuffer);
 
 		uint32_t indices[3] = { 0, 1, 2 };
-		Strike::Ref<Strike::IndexBuffer> indexBuffer;
-		indexBuffer.reset(Strike::IndexBuffer::Create(indices, sizeof(indices) / sizeof(uint32_t)));
+		Strike::Ref<Strike::IndexBuffer> indexBuffer = Strike::IndexBuffer::Create(indices, sizeof(indices) / sizeof(uint32_t));
 		m_VertexArray->SetIndexBuffer(indexBuffer);
 
 
@@ -48,8 +46,7 @@ public:
 			-0.5f,  0.5f,  0.0f, 0.0f, 1.0f
 		};
 
-		Strike::Ref<Strike::VertexBuffer> squareVB;
-		squareVB.reset(Strike::VertexBuffer::Create(squareVertices, sizeof(squareVertices)));
+		Strike::Ref<Strike::VertexBuffer> squareVB = Strike::VertexBuffer::Create(squareVertices, sizeof(squareVertices));
 
 		squareVB->SetLayout({
 			{ Strike::ShaderDataType::Float3, "a_Position" },
@@ -58,8 +55,7 @@ public:
 		m_SquareVA->AddVertexBuffer(squareVB);
 
 		uint32_t squareIndices[6] = { 0, 1, 2, 2, 3, 0 };
-		Strike::Ref<Strike::IndexBuffer> squareIB;
-		squareIB.reset(Strike::IndexBuffer::Create(squareIndices, sizeof(squareIndices) / sizeof(uint32_t)));
+		Strike::Ref<Strike::IndexBuffer> squareIB = Strike::IndexBuffer::Create(squareIndices, sizeof(squareIndices) / sizeof(uint32_t));
 		m_SquareVA->SetIndexBuffer(squareIB);
 
 		//-------- To adjust logo dimensions --------
@@ -72,7 +68,7 @@ public:
 			-0.5f,  0.36f,  0.0f, 0.0f, 1.0f
 		};
 
-		squareVB.reset(Strike::VertexBuffer::Create(squareVerticesLogo, sizeof(squareVerticesLogo)));
+		squareVB = Strike::VertexBuffer::Create(squareVerticesLogo, sizeof(squareVerticesLogo));
 
 		squareVB->SetLayout({
 			{ Strike::ShaderDataType::Float3, "a_Position" },
