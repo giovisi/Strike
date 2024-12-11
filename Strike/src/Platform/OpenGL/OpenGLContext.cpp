@@ -11,6 +11,8 @@ namespace Strike{
 	}
 
 	void OpenGLContext::Init() {
+		STRK_PROFILE_FUNCTION();
+
 		glfwMakeContextCurrent(m_WindowHandle);
 		int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
 		STRK_CORE_ASSERT(status, "Failed to initialize Glad!");
@@ -22,6 +24,8 @@ namespace Strike{
 	}
 
 	void OpenGLContext::SwapBuffers() {
+		STRK_PROFILE_FUNCTION();
+
 		glfwSwapBuffers(m_WindowHandle);
 	}
 }

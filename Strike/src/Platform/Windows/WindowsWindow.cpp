@@ -19,14 +19,20 @@ namespace Strike {
 	}
 
 	WindowsWindow::WindowsWindow(const WindowProps& props) {
+		STRK_PROFILE_FUNCTION();
+
 		Init(props);
 	}
 
 	WindowsWindow::~WindowsWindow() {
+		STRK_PROFILE_FUNCTION();
+
 		Shutdown();
 	}
 
 	void WindowsWindow::Init(const WindowProps& props) {
+		STRK_PROFILE_FUNCTION();
+
 		m_Data.Title = props.Title;
 		m_Data.Width = props.Width;
 		m_Data.Height = props.Height;
@@ -34,13 +40,19 @@ namespace Strike {
 		STRK_CORE_INFO("Creating new window {0} {1} {2}", props.Title, props.Width, props.Height);
 
 		if (!s_GLFWInitialized) {
+			STRK_PROFILE_SCOPE("glfwInit");
+
 			int success = glfwInit();
 			STRK_CORE_ASSERT(success, "Could not initialize GLFW!");
 			glfwSetErrorCallback(GLFWErrorCallback);
 			s_GLFWInitialized = true;
 		}
 
-		m_Window = glfwCreateWindow((int) props.Width, (int) props.Height, props.Title.c_str(), nullptr, nullptr);
+		{
+			STRK_PROFILE_SCOPE("glfwCreateWindow");
+
+			m_Window = glfwCreateWindow((int) props.Width, (int) props.Height, props.Title.c_str(), nullptr, nullptr);
+		}
 
 		m_Context = new OpenGLContext(m_Window);
 		m_Context->Init();
@@ -117,15 +129,21 @@ namespace Strike {
 	}
 
 	void WindowsWindow::Shutdown() {
+		STRK_PROFILE_FUNCTION();
+
 		glfwDestroyWindow(m_Window);
 	}
 
 	void WindowsWindow::OnUpdate() {
+		STRK_PROFILE_FUNCTION();
+
 		glfwPollEvents();
 		m_Context->SwapBuffers();
 	}
 
 	void WindowsWindow::SetVSync(bool enabled) {
+		STRK_PROFILE_FUNCTION();
+
 		if (enabled)
 			glfwSwapInterval(1);
 		else
