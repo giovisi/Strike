@@ -2,7 +2,7 @@
 #include "Window.h"
 
 #ifdef STRK_PLATFORM_WINDOWS
-	#include "Platform/Windows/WindowsWindow.h"
+#include "Platform/Windows/WindowsWindow.h"
 #endif
 
 namespace Strike {

@@ -1,12 +1,17 @@
 workspace "Strike"
     architecture "x64"
-    startproject "Sandbox"
+    startproject "StrikeThrough"
 
     configurations
     {
         "Debug",
         "Release",
         "Dist"
+    }
+
+    flags
+    {
+        "MultiProcessorCompile"
     }
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
@@ -18,9 +23,11 @@ IncludeDir["ImGui"] = "Strike/vendor/imgui"
 IncludeDir["glm"] = "Strike/vendor/glm"
 IncludeDir["stb_image"] = "Strike/vendor/stb_image"
 
-include "Strike/vendor/GLFW"
-include "Strike/vendor/Glad"
-include "Strike/vendor/imgui"
+group "Dependencies"
+    include "Strike/vendor/GLFW"
+    include "Strike/vendor/Glad"
+    include "Strike/vendor/imgui"
+group ""
 
 project "Strike"
     location "Strike"
@@ -97,6 +104,60 @@ project "Strike"
     
 project "Sandbox"
     location "Sandbox"
+    kind "ConsoleApp"
+    language "C++"        
+    cppdialect "C++20"
+    staticruntime "on"
+
+    targetdir ("bin/" .. outputdir .. "/%{prj.name}")
+    objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
+
+    files
+    {
+        "%{prj.name}/src/**.h",
+        "%{prj.name}/src/**.cpp"
+    }
+
+    includedirs
+    {
+        "Strike/vendor/spdlog/include",
+        "Strike/src",
+        "Strike/vendor",
+        "%{IncludeDir.glm}"
+    }
+
+    links
+    {
+        "Strike"
+    }
+
+    filter "system:windows"
+        systemversion "latest"
+
+        defines
+        {
+            "STRK_PLATFORM_WINDOWS"
+        }
+
+    filter "configurations:Debug"
+        defines "STRK_DEBUG"
+        runtime "Debug"
+        symbols "on"
+            
+    filter "configurations:Release"
+        defines "STRK_RELEASE"
+        runtime "Release"
+        optimize "on"
+
+    filter "configurations:Dist"
+        defines "STRK_DIST"
+        runtime "Release"
+        optimize "on"
+        
+        
+        
+project "StrikeThrough"
+    location "StrikeThrough"
     kind "ConsoleApp"
     language "C++"        
     cppdialect "C++20"

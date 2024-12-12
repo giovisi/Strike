@@ -16,7 +16,7 @@ namespace Strike {
 
 	class  Application {
 	public:
-		Application();
+		Application(const std::string& name = "Strike App");
 		virtual ~Application();
 
 		void OnEvent(Event& e);
