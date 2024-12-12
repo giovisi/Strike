@@ -22,6 +22,7 @@ private:
 	// temporary --> inside 2D renderer
 	Strike::Ref<Strike::VertexArray> m_SquareVA;
 	Strike::Ref<Strike::Shader> m_FlatColorShader;
+	Strike::Ref<Strike::Framebuffer> m_Framebuffer;
 
 	Strike::Ref<Strike::Texture2D> m_CheckerboardTexture;
 	Strike::Ref<Strike::Texture2D> m_SpriteSheet;

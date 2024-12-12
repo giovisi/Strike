@@ -1416,6 +1416,8 @@
     <ClInclude Include="src\Strike\Renderer\Renderer2D.h" />
     <ClInclude Include="src\Strike\Debug\Instrumentor.h" />
     <ClInclude Include="src\Strike\Renderer\SubTexture2D.h" />
+    <ClInclude Include="src\Strike\Renderer\Framebuffer.h" />
+    <ClInclude Include="src\Platform\OpenGL\OpenGLFramebuffer.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Platform\OpenGL\OpenGLBuffer.cpp">
@@ -1495,5 +1497,8 @@
     </ClCompile>
     <ClCompile Include="src\Strike\Renderer\Renderer2D.cpp" />
     <ClCompile Include="src\Strike\Renderer\SubTexture2D.cpp" />
+    <ClCompile Include="src\Strike\Renderer\Framebuffer.cpp" />
+    <ClCompile Include="src\Platform\OpenGL\OpenGLFramebuffer.cpp" />
+    <ClCompile Include="src\Strike\Core\Window.cpp" />
   </ItemGroup>
 </Project>

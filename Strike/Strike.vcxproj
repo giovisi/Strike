@@ -145,6 +145,7 @@
   <ItemGroup>
     <ClInclude Include="src\Platform\OpenGL\OpenGLBuffer.h" />
     <ClInclude Include="src\Platform\OpenGL\OpenGLContext.h" />
+    <ClInclude Include="src\Platform\OpenGL\OpenGLFramebuffer.h" />
     <ClInclude Include="src\Platform\OpenGL\OpenGLRendererAPI.h" />
     <ClInclude Include="src\Platform\OpenGL\OpenGLShader.h" />
     <ClInclude Include="src\Platform\OpenGL\OpenGLTexture.h" />
@@ -170,6 +171,7 @@
     <ClInclude Include="src\Strike\Events\MouseEvent.h" />
     <ClInclude Include="src\Strike\ImGui\ImGuiLayer.h" />
     <ClInclude Include="src\Strike\Renderer\Buffer.h" />
+    <ClInclude Include="src\Strike\Renderer\Framebuffer.h" />
     <ClInclude Include="src\Strike\Renderer\GraphicsContext.h" />
     <ClInclude Include="src\Strike\Renderer\OrthographicCamera.h" />
     <ClInclude Include="src\Strike\Renderer\OrthographicCameraController.h" />
@@ -603,6 +605,7 @@
   <ItemGroup>
     <ClCompile Include="src\Platform\OpenGL\OpenGLBuffer.cpp" />
     <ClCompile Include="src\Platform\OpenGL\OpenGLContext.cpp" />
+    <ClCompile Include="src\Platform\OpenGL\OpenGLFramebuffer.cpp" />
     <ClCompile Include="src\Platform\OpenGL\OpenGLRendererAPI.cpp" />
     <ClCompile Include="src\Platform\OpenGL\OpenGLShader.cpp" />
     <ClCompile Include="src\Platform\OpenGL\OpenGLTexture.cpp" />
@@ -613,9 +616,11 @@
     <ClCompile Include="src\Strike\Core\Layer.cpp" />
     <ClCompile Include="src\Strike\Core\LayerStack.cpp" />
     <ClCompile Include="src\Strike\Core\Log.cpp" />
+    <ClCompile Include="src\Strike\Core\Window.cpp" />
     <ClCompile Include="src\Strike\ImGui\ImGuiBuild.cpp" />
     <ClCompile Include="src\Strike\ImGui\ImGuiLayer.cpp" />
     <ClCompile Include="src\Strike\Renderer\Buffer.cpp" />
+    <ClCompile Include="src\Strike\Renderer\Framebuffer.cpp" />
     <ClCompile Include="src\Strike\Renderer\OrthographicCamera.cpp" />
     <ClCompile Include="src\Strike\Renderer\OrthographicCameraController.cpp" />
     <ClCompile Include="src\Strike\Renderer\RenderCommand.cpp" />
