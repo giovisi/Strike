@@ -25,6 +25,7 @@
 #include "Strike/Renderer/Buffer.h"
 #include "Strike/Renderer/Shader.h"
 #include "Strike/Renderer/Texture.h"
+#include "Strike/Renderer/SubTexture2D.h"
 #include "Strike/Renderer/VertexArray.h"
 
 #include "Strike/Renderer/OrthographicCamera.h"

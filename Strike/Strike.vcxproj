@@ -178,6 +178,7 @@
     <ClInclude Include="src\Strike\Renderer\Renderer2D.h" />
     <ClInclude Include="src\Strike\Renderer\RendererAPI.h" />
     <ClInclude Include="src\Strike\Renderer\Shader.h" />
+    <ClInclude Include="src\Strike\Renderer\SubTexture2D.h" />
     <ClInclude Include="src\Strike\Renderer\Texture.h" />
     <ClInclude Include="src\Strike\Renderer\VertexArray.h" />
     <ClInclude Include="src\strkpch.h" />
@@ -622,6 +623,7 @@
     <ClCompile Include="src\Strike\Renderer\Renderer2D.cpp" />
     <ClCompile Include="src\Strike\Renderer\RendererAPI.cpp" />
     <ClCompile Include="src\Strike\Renderer\Shader.cpp" />
+    <ClCompile Include="src\Strike\Renderer\SubTexture2D.cpp" />
     <ClCompile Include="src\Strike\Renderer\Texture.cpp" />
     <ClCompile Include="src\Strike\Renderer\VertexArray.cpp" />
     <ClCompile Include="src\strkpch.cpp">

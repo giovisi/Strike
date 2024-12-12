@@ -27,11 +27,13 @@ namespace Strike {
 		inline const OrthographicCamera& GetCamera() const { return m_Camera; }
 
 		inline float GetZoomLevel() { return m_ZoomLevel; }
-		inline void SetZoomLevel(float level) { m_ZoomLevel = level; }
+		inline void SetZoomLevel(float level) { m_ZoomLevel = level; CalculateView(); }
 		
 		inline const OrthographicCameraBounds& GetBounds() const { return m_Bounds; }
 
 	private:
+		void CalculateView();
+
 		bool OnMouseScrolled(MouseScrolledEvent& e);
 		bool OnWindowResized(WindowResizeEvent& e);
 

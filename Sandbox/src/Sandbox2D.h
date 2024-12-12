@@ -25,6 +25,7 @@ private:
 
 	Strike::Ref<Strike::Texture2D> m_CheckerboardTexture;
 	Strike::Ref<Strike::Texture2D> m_SpriteSheet;
+	Strike::Ref<Strike::SubTexture2D> m_TextureStairs, m_TextureBarrel, m_TextureTree;
 
 	struct ProfileResult {
 		const char* Name;
@@ -37,4 +38,8 @@ private:
 
 	ParticleSystem m_ParticleSystem;
 	ParticleProps m_Particle;
+
+	uint32_t m_MapWidth, m_MapHeight;
+
+	std::unordered_map<char, Strike::Ref<Strike::SubTexture2D>> s_TextureMap;
 };
