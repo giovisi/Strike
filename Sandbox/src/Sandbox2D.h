@@ -24,6 +24,7 @@ private:
 	Strike::Ref<Strike::Shader> m_FlatColorShader;
 
 	Strike::Ref<Strike::Texture2D> m_CheckerboardTexture;
+	Strike::Ref<Strike::Texture2D> m_SpriteSheet;
 
 	struct ProfileResult {
 		const char* Name;
