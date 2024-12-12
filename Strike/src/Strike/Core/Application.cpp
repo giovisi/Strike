@@ -50,6 +50,10 @@ namespace Strike {
 		overlay->OnAttach();
 	}
 
+	void Application::Close() {
+		m_Running = false;
+	}
+
 	void Application::OnEvent(Event& e) {
 		STRK_PROFILE_FUNCTION();
 
