@@ -90,7 +90,7 @@
     <ClInclude Include="src\Strike\Core\Application.h">
       <Filter>src\Strike\Core</Filter>
     </ClInclude>
-    <ClInclude Include="src\Strike\Core\Core.h">
+    <ClInclude Include="src\Strike\Core\Base.h">
       <Filter>src\Strike\Core</Filter>
     </ClInclude>
     <ClInclude Include="src\Strike\Core\EntryPoint.h">

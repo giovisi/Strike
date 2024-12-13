@@ -22,6 +22,7 @@ namespace Strike {
 
 		void OnUpdate(Timestep ts);
 		void OnEvent(Event& e);
+		void OnResize(float width, float height);
 
 		inline OrthographicCamera& GetCamera() { return m_Camera; }
 		inline const OrthographicCamera& GetCamera() const { return m_Camera; }

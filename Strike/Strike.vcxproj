@@ -158,7 +158,7 @@
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
     <ClInclude Include="src\Strike.h" />
     <ClInclude Include="src\Strike\Core\Application.h" />
-    <ClInclude Include="src\Strike\Core\Core.h" />
+    <ClInclude Include="src\Strike\Core\Base.h" />
     <ClInclude Include="src\Strike\Core\EntryPoint.h" />
     <ClInclude Include="src\Strike\Core\Input.h" />
     <ClInclude Include="src\Strike\Core\KeyCodes.h" />

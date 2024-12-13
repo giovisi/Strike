@@ -2,7 +2,7 @@
 
 #include "strkpch.h"
 
-#include "Strike/Core/Core.h"
+#include "Strike/Core/Base.h"
 
 namespace Strike {
 	enum class EventType {
