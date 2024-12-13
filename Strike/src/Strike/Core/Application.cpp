@@ -12,9 +12,6 @@
 #include <GLFW/glfw3.h>
 
 namespace Strike {
-
-#define BIND_EVENT_FN(x) std::bind(&x, this, std::placeholders::_1)
-
 	Application* Application::s_Instance = nullptr;
 
 	Application::Application(const std::string& name) {
@@ -24,7 +21,7 @@ namespace Strike {
 		s_Instance = this;
 
 		m_Window = Window::Create(WindowProps(name));
-		m_Window->SetEventCallback(BIND_EVENT_FN(Application::OnEvent));
+		m_Window->SetEventCallback(STRK_BIND_EVENT_FN(Application::OnEvent));
 
 		Renderer::Init();
 
@@ -60,14 +57,12 @@ namespace Strike {
 		STRK_PROFILE_FUNCTION();
 
 		EventDispatcher dispatcher(e);
-		dispatcher.Dispatch<WindowCloseEvent>(BIND_EVENT_FN(Application::OnWindowClose));
-		dispatcher.Dispatch<WindowResizeEvent>(BIND_EVENT_FN(Application::OnWindowResize));
+		dispatcher.Dispatch<WindowCloseEvent>(STRK_BIND_EVENT_FN(Application::OnWindowClose));
+		dispatcher.Dispatch<WindowResizeEvent>(STRK_BIND_EVENT_FN(Application::OnWindowResize));
 
-		//STRK_CORE_INFO("{0}", e);
-
-		for (auto it = m_LayerStack.end(); it != m_LayerStack.begin(); ) {
-			(*--it)->OnEvent(e);
+		for (auto it = m_LayerStack.rbegin(); it != m_LayerStack.rend(); ++it) {
 			if (e.Handled) break;
+			(*it)->OnEvent(e);
 		}
 	}
 

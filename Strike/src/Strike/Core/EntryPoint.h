@@ -6,7 +6,6 @@ extern Strike::Application* Strike::CreateApplication();
 
 int main(int argc, char** argv) {
 	Strike::Log::Init();
-	int a = 8;
 
 	STRK_PROFILE_BEGIN_SESSION("Startup", "StrikeProfile-Startup.json");
 	auto app = Strike::CreateApplication();

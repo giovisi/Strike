@@ -15,6 +15,7 @@ namespace Strike {
 		STRK_CORE_ASSERT(false, "Unknown RendererAPI!");
 		return nullptr;
 	}
+
 	Ref<Texture2D> Texture2D::Create(const std::string& path) {
 		switch (Renderer::GetAPI()) {
 		case RendererAPI::API::None:	STRK_CORE_ASSERT(false, "RendererAPI::API::None currently not supprorted!"); return nullptr;

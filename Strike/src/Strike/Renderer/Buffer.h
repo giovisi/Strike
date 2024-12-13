@@ -32,6 +32,7 @@ namespace Strike {
 		bool Normalized;
 
 		BufferElement() {}
+
 		BufferElement(ShaderDataType type, const std::string& name, bool normalized = false)
 			: Name(name), Type(type), Size(ShaderDataTypeSize(type)), Offset(0), Normalized(normalized) {}
 
@@ -91,7 +92,7 @@ namespace Strike {
 
 	class VertexBuffer {
 	public:
-		virtual ~VertexBuffer() {}
+		virtual ~VertexBuffer() = default;
 
 		virtual void Bind() const = 0;
 		virtual void Unbind() const = 0;
@@ -108,7 +109,7 @@ namespace Strike {
 
 	class IndexBuffer {
 	public:
-		virtual ~IndexBuffer() {}
+		virtual ~IndexBuffer() = default; 
 
 		virtual void Bind() const = 0;
 		virtual void Unbind() const = 0;
