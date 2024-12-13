@@ -2,9 +2,20 @@
 
 #include <memory>
 
+#ifdef STRK_DEBUG
+	#if defined(STRK_PLATFORM_WINDOWS)
+		#define STRK_DEBUGBREAK() __debugbreak()
+	#else
+		#error "Platform does not support debugbreak yet!"
+	#endif
+	#define STRK_ENABLE_ASSERTS
+#else
+	#define STRK_DEBUGBREAK()
+#endif
+
 #ifdef STRK_ENABLE_ASSERTS
-	#define STRK_ASSERT(x, ...) { if(!(x)) {STRK_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); } }
-	#define STRK_CORE_ASSERT(x, ...) { if(!(x)) { STRK_CORE_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); } }
+	#define STRK_ASSERT(x, ...) { if(!(x)) {STRK_ERROR("Assertion Failed: {0}", __VA_ARGS__); STRK_DEBUGBREAK(); } }
+	#define STRK_CORE_ASSERT(x, ...) { if(!(x)) { STRK_CORE_ERROR("Assertion Failed: {0}", __VA_ARGS__); STRK_DEBUGBREAK(); } }
 #else
 	#define STRK_ASSERT(x, ...)
 	#define STRK_CORE_ASSERT(x, ...)
